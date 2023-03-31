@@ -1,6 +1,6 @@
 Name:		texlive-archivo
 Version:	57283
-Release:	1
+Release:	2
 Summary:	The Archivo font face with support for LaTeX and pdfLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/archivo
