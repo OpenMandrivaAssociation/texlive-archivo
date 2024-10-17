@@ -3,7 +3,7 @@ Version:	57283
 Release:	2
 Summary:	The Archivo font face with support for LaTeX and pdfLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/archivo
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/archivo
 License:	ofl lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archivo.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archivo.doc.r%{version}.tar.xz
