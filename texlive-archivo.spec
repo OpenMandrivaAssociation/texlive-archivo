@@ -1,42 +1,23 @@
-Name:		texlive-archivo
-Version:	57283
-Release:	2
+%global tl_name archivo
+%global tl_revision 78931
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.0.2
+Release:	%{tl_revision}.1
 Summary:	The Archivo font face with support for LaTeX and pdfLaTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/archivo
+URL:		https://www.ctan.org/tex-archive/fonts/archivo
 License:	ofl lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archivo.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archivo.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/archivo.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/archivo.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides the Archivo family of fonts designed by
-Omnibus-Type, with support for LaTeX and pdfLaTeX.
+This package provides the Archivo family of fonts designed by Omnibus-
+Type, with support for LaTeX and pdfLaTeX.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/archivo
-%{_texmfdistdir}/fonts/vf/public/archivo
-%{_texmfdistdir}/fonts/type1/public/archivo
-%{_texmfdistdir}/fonts/tfm/public/archivo
-%{_texmfdistdir}/fonts/opentype/public/archivo
-%{_texmfdistdir}/fonts/map/dvips/archivo
-%{_texmfdistdir}/fonts/enc/dvips/archivo
-%doc %{_texmfdistdir}/doc/fonts/archivo
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
